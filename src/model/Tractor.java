@@ -32,11 +32,32 @@ public class Tractor extends Vehicle{
 	}
 	
 	//4.both constructors
+	public Tractor() {
+		super();//this will call Vehicle() no args constructor
+		setTitle("BMW tractor");
+		setVehicleCode();
+		setAdditionalTechniques("AI-driven");
+		setIsOnlyLargeTires(true);
+		
+	}
+	
+	public Tractor(String inputTitle, float inputPrice,
+			EnergyType inputEtype,String inputAdditionalTechniques,
+			boolean inputIsOnlyLargeTires) {
+		super(inputTitle, inputPrice, inputEtype);
+		//^^^ this will call argument constructor from base class -> Vehicle(String inputTitle, float inputPrice, EnergyType inputEtype)
+		setAdditionalTechniques(inputAdditionalTechniques);
+		setIsOnlyLargeTires(inputIsOnlyLargeTires);
+	}
 	
 	//5. toString
+	public String toString() {
+		String result = super.toString() 
+				+ " " + additionalTechniques + " "
+				+ isOnlyLargeTires;
+		return result;
+	}
 	
-	
-	//please create two Tractor objects in the MainService
-	
+
 	
 }
