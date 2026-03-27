@@ -18,11 +18,61 @@ public class Vehicle {
 		return title;
 	}
 	
+	public String getVehicleCode() {
+		return vehicleCode;
+	}
+
+	public float getPrice() {
+		return price;
+	}
+
+	public EnergyType geteType() {
+		return eType;
+	}
+
 	//3.setters
 	public void setId() {
 		id = counter;
 		counter++;
 	}
+	
+	public void setTitle(String inputTitle) {
+		if((inputTitle != null) && (!inputTitle.isEmpty()) 
+				&& (inputTitle.matches("[A-Z]{1}[a-z]{3,20}"))) {
+			title = inputTitle;
+		}
+		else
+		{
+			title = "Unknown";
+		}
+	}
+	
+	
+	public void setVehicleCode() {
+		vehicleCode = id + "_" + title;
+	}
+	
+	public void setPrice(float inputPrice) {
+		if(inputPrice > 0   && inputPrice <= 100000 ) {
+			price = inputPrice;
+		}
+		else
+		{
+			price = 1;
+		}
+	}
+	
+	public void setEType(EnergyType inputEtype) {
+		if(inputEtype!=null) {
+			eType = inputEtype;
+		}
+		else
+		{
+			eType = EnergyType.not_specified;
+		}
+	}
+	
+	
 	//4.both constructors
 	//5.toString function
 
