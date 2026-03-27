@@ -74,6 +74,29 @@ public class Vehicle {
 	
 	
 	//4.both constructors
+	public Vehicle() {
+		setId();
+		setTitle("MB car");
+		setVehicleCode();
+		setPrice(99999.99f);
+		setEType(EnergyType.electric);
+	}
+	
+	public Vehicle(String inputTitle, float inputPrice,
+			EnergyType inputEtype) {
+		setId();
+		setTitle(inputTitle);
+		setVehicleCode();
+		setPrice(inputPrice);
+		setEType(inputEtype);
+	}
+	
 	//5.toString function
 
+	public String toString() {
+		String result = id + ": " + title + " (" + vehicleCode + "), "
+				+ price + " EUR, " + eType;
+		return result;
+	}
+	
 }
