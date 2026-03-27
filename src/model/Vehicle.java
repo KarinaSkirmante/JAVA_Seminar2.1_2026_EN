@@ -38,7 +38,7 @@ public class Vehicle {
 	
 	public void setTitle(String inputTitle) {
 		if((inputTitle != null) && (!inputTitle.isEmpty()) 
-				&& (inputTitle.matches("[A-Z]{1}[a-z]{3,20}"))) {
+				&& (inputTitle.matches("[A-Z]{1}[A-Za-z ]{3,20}"))) {
 			title = inputTitle;
 		}
 		else
