@@ -99,4 +99,29 @@ public class Purchase {
 	}
 	
 	
+	public void removeVehicleFromShoppingListByVehicleCode
+	(String inputVehicleCode) {
+		//TODO check input param
+		boolean findVehicle = false;
+		for(int i = 0; i < shoppingList.size(); i++) {
+			Vehicle tempV = shoppingList.get(i);
+			if(tempV.getVehicleCode().equals(inputVehicleCode)) {
+				shoppingList.remove(i);
+				MainService.allVehiclesInStore.add(tempV);
+				findVehicle = true;
+			}
+		}
+		
+		if(findVehicle) {
+			System.out.println("Vehicle with code " + inputVehicleCode
+					+ " is removed from shopping list");
+			
+		}
+		else
+		{
+			System.out.println("There is no vehicles with code " 
+		+ inputVehicleCode + " in the shopping list");
+		}
+	}
+	
 }

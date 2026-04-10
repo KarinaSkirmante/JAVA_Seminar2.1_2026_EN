@@ -46,6 +46,14 @@ public class MainService {
 		
 		System.out.println("-------ALL VEHICLES IN THE STORE AFTER BUYING---------");
 		System.out.println(allVehiclesInStore);
+		
+		pur2.removeVehicleFromShoppingListByVehicleCode("4_BMW tractor");
+		System.out.println(pur2);
+		
+		
+		System.out.println("-------ALL VEHICLES IN THE STORE AFTER BUYING BUT RETURNING BMW TRACTOR---------");
+		System.out.println(allVehiclesInStore);
+		
 
 	}
 
