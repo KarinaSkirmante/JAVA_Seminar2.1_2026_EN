@@ -3,6 +3,8 @@ package model;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
+import service.MainService;
+
 public class Purchase {
 	//1.variables
 	private String userCardNo;
@@ -70,4 +72,31 @@ public class Purchase {
 				"[" + datetime + "]";
 		return result;
 	}
+	
+	//6. additional functions
+	public void addVehicleToShoppingListByVehicleCode
+	(String inputVehicleCode, int quantity) {
+		//TODO check input params
+		int howManyVecFindInStore = 0;
+		for(int i = 0; i < MainService.allVehiclesInStore.size(); i++) {
+			Vehicle tempV = MainService.allVehiclesInStore.get(i);
+			if(tempV.getVehicleCode().equals(inputVehicleCode)) {
+				MainService.allVehiclesInStore.remove(tempV);
+				shoppingList.add(tempV);
+				howManyVecFindInStore++;
+			}
+		}
+		
+		if(quantity > howManyVecFindInStore) {
+			System.out.println("There is no " + quantity 
+					+ " vechiles with code " + inputVehicleCode);
+		}
+		else
+		{
+			System.out.println("Vechiles are stored in the shoppingList");
+		}
+		
+	}
+	
+	
 }
