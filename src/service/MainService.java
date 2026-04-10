@@ -54,7 +54,35 @@ public class MainService {
 		System.out.println("-------ALL VEHICLES IN THE STORE AFTER BUYING BUT RETURNING BMW TRACTOR---------");
 		System.out.println(allVehiclesInStore);
 		
-
+		System.out.println("--------VEHICLES WHICH PRICE IS UNDER 10K EUR-----------------");
+		try
+		{
+		ArrayList<Vehicle> vechiceleLess20k 
+		= showVehiclesIfPriceLessThan20000();
+		System.out.println(vechiceleLess20k);
+		}catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
 	}
+	
+	public static ArrayList<Vehicle> showVehiclesIfPriceLessThan20000()
+	throws Exception{
+		ArrayList<Vehicle> result = new ArrayList<Vehicle>();
+		
+		for(Vehicle tempV: allVehiclesInStore) {
+			if(tempV.getPrice() < 20000) {
+				result.add(tempV);
+			}
+		}
+		
+		if(result.isEmpty()) {
+			throw new Exception("There is no vehicle in the store "
+					+ "which price is less than 20000 EUR");
+		}
+		
+		return result;
+	}
+	
+	
 
 }
