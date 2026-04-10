@@ -49,7 +49,7 @@ public class MainService {
 		
 		pur2.removeVehicleFromShoppingListByVehicleCode("4_BMW tractor");
 		System.out.println(pur2);
-		
+		System.out.println(pur2.calculateShoppingListValue() + " EUR");
 		
 		System.out.println("-------ALL VEHICLES IN THE STORE AFTER BUYING BUT RETURNING BMW TRACTOR---------");
 		System.out.println(allVehiclesInStore);

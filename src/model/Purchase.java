@@ -124,4 +124,13 @@ public class Purchase {
 		}
 	}
 	
+	public float calculateShoppingListValue() {
+		float sum = 0;
+		for(Vehicle tempV : shoppingList) {
+			sum = sum + tempV.getPrice();
+		}
+		return sum;
+	}
+	
+	
 }
