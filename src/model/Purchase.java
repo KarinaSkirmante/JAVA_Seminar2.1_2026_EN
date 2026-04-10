@@ -21,6 +21,31 @@ public class Purchase {
 	}
 	
 	//3.setters
+	public void setUserCardNo(String inputUserCardNo) {
+		if(inputUserCardNo != null && !inputUserCardNo.isEmpty()
+				&& inputUserCardNo.matches("[A-Z]{2}[0-9]{5}")) {
+			userCardNo = inputUserCardNo;
+		}
+		else
+		{
+			userCardNo = "AB12345";
+		}
+	}
+	
+	public void setShoppingList(ArrayList<Vehicle> inputShoppingList) {
+		if(inputShoppingList != null 
+				&& !inputShoppingList.isEmpty()) {
+			shoppingList = inputShoppingList;
+		}
+		else
+		{
+			shoppingList = new ArrayList<Vehicle>();
+		}
+	}
+	//no set function of the 
+	//datetime because the datetime will be stored automatically
+	
+	
 	//4.both constructors
 	//5.toString
 }
