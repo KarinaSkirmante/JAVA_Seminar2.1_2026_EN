@@ -82,7 +82,7 @@ public class MainService {
 		
 		return result;
 	}
-	
+	//TODO filter all vehicle which is hybrid
 	
 
 }
