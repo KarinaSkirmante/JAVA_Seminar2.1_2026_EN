@@ -2,6 +2,7 @@ package service;
 
 import model.Bus;
 import model.EnergyType;
+import model.Purchase;
 import model.Tractor;
 import model.Vehicle;
 
@@ -24,6 +25,13 @@ public class MainService {
 		Tractor t2 = new Tractor("Robot Tractor", 12345.65f
 				, EnergyType.other, "No any", false);
 		System.out.println(t2);
+		
+		Purchase pur1 = new Purchase();
+		System.out.println(pur1);
+		Purchase pur2 = new Purchase("XX98765");
+		pur2.getShoppingList().add(b2);
+		pur2.getShoppingList().add(t2);
+		System.out.println(pur2);
 
 	}
 
