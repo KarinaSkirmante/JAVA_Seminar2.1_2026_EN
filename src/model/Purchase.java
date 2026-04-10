@@ -47,5 +47,27 @@ public class Purchase {
 	
 	
 	//4.both constructors
+	public Purchase() {
+		setUserCardNo("AB12345");
+		//we don't need to call set function for shoppingList
+		//because it is initialized in variable declaration
+		//we don't need to call set function for datetime
+		//because it is initialized in variable declaration
+	}
+	public Purchase(String inputUserCardNo) {
+		setUserCardNo(inputUserCardNo);
+		//we don't need to call set function for shoppingList
+		//because it is initialized in variable declaration
+		//we don't need to call set function for datetime
+		//because it is initialized in variable declaration
+	}
+		
+	
 	//5.toString
+	//AB12345: bus1, bus2, tractor1 [10/14/26T14:26.2465741]
+	public String toString() {
+		String result = userCardNo + ": " + shoppingList + 
+				"[" + datetime + "]";
+		return result;
+	}
 }
